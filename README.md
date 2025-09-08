@@ -22,146 +22,144 @@ STEP 6: Use zscore of to remove outliers
 
 # Coding and Output
 ```
-DONE BY JAI HARISH R
-REG NO: 212224040124
-```            
-```
-import numpy as np
 import pandas as pd
 df = pd.read_csv("SAMPLEIDS.csv")
 df
 ```
-<img width="1275" height="864" alt="image" src="https://github.com/user-attachments/assets/51ff2dd3-fc52-42de-a3d4-70da87485b49" />
+<img width="893" height="555" alt="image" src="https://github.com/user-attachments/assets/19587096-6ac8-4499-9c35-0991f9f7a1d1" />
+
+```
+df.head( )
+```
+<img width="853" height="169" alt="image" src="https://github.com/user-attachments/assets/04e44603-a32b-4bdb-9488-3555a22e3e13" />
+
+```
+df.tail( )
+```
+<img width="896" height="166" alt="image" src="https://github.com/user-attachments/assets/fbcbc846-36e9-4f28-aeff-e54127cd9b55" />
 
 
 ```
-df.head()
+df.isnull( )
 ```
-<img width="1040" height="252" alt="image" src="https://github.com/user-attachments/assets/5015c2d9-6859-4e07-8b74-07e83f31a643" />
-
-
-```
-df.tail()
-```
-<img width="1083" height="276" alt="image" src="https://github.com/user-attachments/assets/0534bf8c-d397-4b5d-8ce1-6d75603da2b7" />
-
+<img width="815" height="537" alt="image" src="https://github.com/user-attachments/assets/750802fc-c2ab-4e00-910d-1c7e04437ce0" />
 
 ```
-df.isnull()
+df.notnull( )
 ```
-<img width="1023" height="856" alt="image" src="https://github.com/user-attachments/assets/264f2e09-58c9-4f71-a0c5-01c8fab061cc" />
-
+<img width="646" height="552" alt="image" src="https://github.com/user-attachments/assets/6510b77c-f0aa-4715-85e3-27afffbb90c2" />
 
 ```
 df.isnull().sum()
 ```
-<img width="336" height="584" alt="image" src="https://github.com/user-attachments/assets/1b4ef06f-e6e8-4c1d-b3e6-a870a0b93b66" />
-
+<img width="237" height="212" alt="image" src="https://github.com/user-attachments/assets/4bcd560d-a676-46fe-b7ee-672cdedd1017" />
 
 ```
 df.isnull().any()
 ```
-<img width="405" height="572" alt="image" src="https://github.com/user-attachments/assets/77237597-b6d0-4783-b1fa-195d664619d8" />
-
+<img width="241" height="214" alt="image" src="https://github.com/user-attachments/assets/fdb5bdd7-56a1-4cd4-ad07-84c236a2c36b" />
 
 ```
-df.dropna()
+df.dropna(axis=0)
 ```
-<img width="1194" height="568" alt="image" src="https://github.com/user-attachments/assets/cf83006a-ff73-46a1-8010-9caec92d0a2a" />
-
-
+<img width="666" height="338" alt="image" src="https://github.com/user-attachments/assets/447ddaaf-08df-4295-8384-b3bccb52e0ff" />
 
 ```
 df.dropna(axis=1)
 ```
-<img width="499" height="850" alt="image" src="https://github.com/user-attachments/assets/c4c5953e-6060-4c00-abc7-fa12e9edbdbc" />
+<img width="295" height="542" alt="image" src="https://github.com/user-attachments/assets/5fbb3fdd-f75a-49b6-8e9d-9bac70185dcf" />
 
 ```
-df.fillna(5)
+df.dropna()
 ```
-<img width="1227" height="852" alt="image" src="https://github.com/user-attachments/assets/dc581e48-5bf9-4e47-8c3a-c56c36f84fc8" />
-
-
-```
-
-df.fillna(method = 'ffill')
-```
-<img width="1094" height="848" alt="image" src="https://github.com/user-attachments/assets/16086396-bedd-4187-b5d3-7343bd681f1e" />
-
+<img width="730" height="358" alt="image" src="https://github.com/user-attachments/assets/0a8045e6-b162-4c43-a32f-57874e0df317" />
 
 ```
-df.fillna(method = 'bfill')
+df.fillna(0)
 ```
-<img width="1110" height="844" alt="image" src="https://github.com/user-attachments/assets/7bed128e-dce3-4546-945c-baf911318734" />
-
-
-```
-df.fillna({'NAME':"JAI",'DOB':'23-12-2006','GENDER':'MALE','M1':100,'M2':100,'M3':100,'M4':100,'TOTAL':400,'AVG':100})
-```
-<img width="1149" height="861" alt="image" src="https://github.com/user-attachments/assets/f72708da-586a-43dc-b2e6-302dd8b8d8c8" />
-
+<img width="699" height="556" alt="image" src="https://github.com/user-attachments/assets/a63e013c-8ceb-45b9-b329-a03a3a5f5497" />
 
 ```
-df1=pd.read_csv("/content/iris.csv")
-df1
+df.fillna(2)
 ```
-<img width="829" height="487" alt="image" src="https://github.com/user-attachments/assets/18e483e9-4df9-4b91-b8a1-79f54689f4f4" />
+<img width="720" height="559" alt="image" src="https://github.com/user-attachments/assets/512dcb19-427f-4121-af12-dc2b84d17c48" />
 
+``` 
+df.ffill()
+```
+<img width="722" height="546" alt="image" src="https://github.com/user-attachments/assets/1505f4f4-c3ca-49b5-8f49-fae6ef48eebc" />
 
 ```
-df1.describe()
+df.bfill()
 ```
-<img width="749" height="387" alt="image" src="https://github.com/user-attachments/assets/34d9430e-9850-458f-aecb-c354f0b980dc" />
+<img width="705" height="547" alt="image" src="https://github.com/user-attachments/assets/cba91f7e-8f0e-4ccc-9dfd-cc8f3e778b77" />
 
+```
+df.fillna({'GENDERE':'MALE','NAME':'SRI','ADDRESS':'CHENNAI','M1':89.0,'M2':99.0,'M3':77.9,'M4':98.9})
+```
+<img width="727" height="549" alt="image" src="https://github.com/user-attachments/assets/50ad797a-e2f7-4dfa-ad91-676f90953bd3" />
+
+```
+ir = pd.read_csv('iris.csv')
+ir
+```
+<img width="469" height="336" alt="image" src="https://github.com/user-attachments/assets/141a89ea-c7ea-4acb-832a-c505dc3dacf6" />
+
+```
+ir.head()
+```
+<img width="416" height="163" alt="image" src="https://github.com/user-attachments/assets/ebd7d141-635f-4ac4-99e1-4489851e7ba3" />
+
+```
+ir.describe()
+```
+<img width="385" height="246" alt="image" src="https://github.com/user-attachments/assets/1ce7ef00-5ab0-45af-8cf5-1e36d87194a0" />
 
 ```
 import seaborn as sns
-sns.boxplot(x='sepal_width',data=df1)
+sns.boxplot(x='sepal_width',data=ir)
 ```
-<img width="845" height="575" alt="image" src="https://github.com/user-attachments/assets/fd19d362-5523-4e68-9b2c-a4c57bada81c" />
-
-
-
+<img width="675" height="436" alt="image" src="https://github.com/user-attachments/assets/606bb6f6-fd54-4800-8787-b37c67bf4682" />
 ```
-q1=df1.sepal_width.quantile(0.25)
-q3=df1.sepal_width.quantile(0.75)
+q1=ir.sepal_width.quantile(0.25)
+q3=ir.sepal_width.quantile(0.75)
 iqr=q3-q1
 print(iqr)
 ```
-<img width="522" height="165" alt="image" src="https://github.com/user-attachments/assets/fe83f45c-bd80-4efc-b81b-6cea24bddcb6" />
-
-
+<img width="916" height="102" alt="image" src="https://github.com/user-attachments/assets/bf52c535-f423-453d-a1e7-adc733e50aaf" />
 
 ```
-new=df1[(df1.sepal_width>(q1-1.5*iqr))& (df1.sepal_width<(q3+1.5*iqr))]
-new
+rid = ir[((ir.sepal_width<(q1-1.5*iqr))|(ir.sepal_width>(q3+1.5*iqr)))]
+rid['sepal_width'] 
 ```
-<img width="856" height="511" alt="image" src="https://github.com/user-attachments/assets/83990680-eabc-4b61-92d7-a712f1303a95" />
-
-
+<img width="903" height="97" alt="image" src="https://github.com/user-attachments/assets/d160cac3-ec91-4594-820b-6267e69717e4" />
 
 ```
-sns.boxplot(x='sepal_width',data=new)
+delid = ir[~((ir.sepal_width<(q1-1.5*iqr))|(ir.sepal_width>(q3+1.5*iqr)))]
+delid     
 ```
-<img width="914" height="577" alt="image" src="https://github.com/user-attachments/assets/51318c8f-4e11-4dc2-a1ff-6c9360923b69" />
+<img width="423" height="350" alt="image" src="https://github.com/user-attachments/assets/fd1af2c6-e97f-465b-8362-58c6476fcf93" />
+
+```
+sns.boxplot(x='sepal_width',data=delid)
+```
+<img width="694" height="433" alt="image" src="https://github.com/user-attachments/assets/4c6b4b6a-090e-483d-a6b3-008d94684e0d" />
 
 ```
 import numpy as np
-import scipy.stats as st
-z=np.abs(st.zscore(df1.sepal_width))
-print(z)
+import scipy.stats as stats 
+z = np.abs (stats.zscore(delid['sepal_width']))
+z
 ```
-<img width="860" height="548" alt="image" src="https://github.com/user-attachments/assets/9b76366c-38a3-401e-bdec-1c79efad4af4" />
+<img width="597" height="202" alt="image" src="https://github.com/user-attachments/assets/539e0f1d-a4dd-4095-9c0f-1efeb5b9a29a" />
 
 ```
-dfff=df1[z<3]
-dfff
+delid = delid[z<3]
+delid
 ```
-<img width="818" height="522" alt="image" src="https://github.com/user-attachments/assets/fb04637b-1dbf-4faa-901b-a175ba991723" />
+<img width="453" height="336" alt="image" src="https://github.com/user-attachments/assets/582924cf-0c38-4546-8df4-fe9b19365a8f" />
 
 
 
-# Result
-Thus to read the given data and perform data cleaning and save the cleaned data to a file done successfully.
-
-
+## Result
+The given data has been successfully read, cleaned by handling duplicates and missing values.
